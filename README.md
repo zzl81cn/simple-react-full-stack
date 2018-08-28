@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/crsandeep/simple-react-full-stack.svg?branch=master)](https://travis-ci.org/crsandeep/simple-react-full-stack)
 [![Greenkeeper badge](https://badges.greenkeeper.io/crsandeep/simple-react-full-stack.svg)](https://greenkeeper.io/)
 
-[note-link](https://app.yinxiang.com/shard/s27/nl/6509927/06ddfbe7-58e7-4835-8a01-ec15a02dfe11?title=Full%20Stack%20Web%20Application%20using%20React%2C%20Node.js%2C%20Express%20and%20Webpack
+[note-link](https://app.yinxiang.com/shard/s27/nl/6509927/06ddfbe7-58e7-4835-8a01-ec15a02dfe11?title=Full%20Stack%20Web%20Application%20using%20React%2C%20Node.js%2C%20Express%20and%20Webpack)
 This is a boilerplate to build a full stack web application using React, Node.js, Express and Webpack. It is also configured with webpack-dev-server, eslint, prettier and babel.
-)
+
 
 - [simple-react-full-stack](#simple-react-full-stack)
   - [Introduction](#introduction)
