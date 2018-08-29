@@ -11,7 +11,7 @@
 - [简单react的全栈](#simple-react-full-stack)
   - [介绍](#introduction)
     - [开发模式](#development-mode)
-    - [部署模式](#production-mode)
+    - [生产模式](#production-mode)
   - [快速开始](#quick-start)
   - [文档](#documentation)
     - [文档结构](#folder-structure)
@@ -28,44 +28,48 @@
 ## Introduction
 
 [Create React App](https://github.com/facebook/create-react-app) is a quick way to get started with React development and it requires no build configuration. But it completely hides the build config which makes it difficult to extend. It also requires some additional work to integrate it with an existing Node.js/Express backend application.
-
+创建React App是一种快速开始使用React开发的方法，它不需要构建配置。 但它完全隐藏了构建配置，这使得难以扩展。 它还需要一些额外的工作来将它与现有的Node.js / Express后端应用程序集成。
 This is a simple full stack [React](https://reactjs.org/) application with a [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com/) backend. Client side code is written in React and the backend API is written using Express. This application is configured with [Airbnb's ESLint rules](https://github.com/airbnb/javascript) and formatted through [prettier](https://prettier.io/).
+这是一个带有Node.js和Express后端的简单的完整堆栈React应用程序。 客户端代码用React编写，后端API用Express编写。 此应用程序配置了Airbnb的ESLint规则，并通过更漂亮的格式进行了格式化。
 
 ### Development mode
 
 In the development mode, we will have 2 servers running. The front end code will be served by the [webpack dev server](https://webpack.js.org/configuration/dev-server/) which helps with hot and live reloading. The server side Express code will be served by a node server using [nodemon](https://nodemon.io/) which helps in automatically restarting the server whenever server side code changes.
+在开发模式中，我们将运行2台服务器。 前端代码将由[webpack开发服务器](https://webpack.js.org/configuration/dev-server/)提供，它有助于热重和实时重新加载。 服务器端Express代码将由节点服务器使用[nodemon](https://nodemon.io/)提供服务 ，这有助于在服务器端代码更改时自动重新启动服务器。
 
 ### Production mode
 
 In the production mode, we will have only 1 server running. All the client side code will be bundled into static files using webpack and it will be served by the Node.js/Express application.
+在生产模式中，我们只有1台服务器在运行。 所有客户端代码都将使用webpack捆绑到静态文件中，它将由Node.js / Express应用程序提供。
 
 ## Quick Start
 
 ```bash
-# Clone the repository
+# 克隆存储库
 git clone https://github.com/crsandeep/simple-react-full-stack
 
-# Go inside the directory
+# 进入目录
 cd simple-react-full-stack
 
-# Install dependencies
+# 安装依赖项
 yarn (or npm install)
 
-# Start development server
+# 启动开发服务器
 yarn dev (or npm run dev)
 
-# Build for production
+# 生产构建
 yarn build (or npm run build)
 
-# Start production server
+# 启动生产服务器
 yarn start (or npm start)
 ```
 
-## Documentation
+## 文档
 
-### Folder Structure
+### 文件夹结构
 
 All the source code will be inside **src** directory. Inside src, there is client and server directory. All the frontend code (react, css, js and any other assets) will be in client directory. Backend Node.js/Express code will be in the server directory.
+所有源代码都在src目录下。 在src里面，有客户端和服务器目录。 所有前端代码（react，css，js和任何其他资产）都将位于客户端目录中。 后端Node.js / Express代码将位于服务器目录中。
 
 ### Babel
 
