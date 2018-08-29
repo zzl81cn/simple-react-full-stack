@@ -1,5 +1,3 @@
-English | [简体中文](./README.zh-CN.md)
-
 # simple-react-full-stack
 
 [![Build Status](https://travis-ci.org/crsandeep/simple-react-full-stack.svg?branch=master)](https://travis-ci.org/crsandeep/simple-react-full-stack)
@@ -7,18 +5,18 @@ English | [简体中文](./README.zh-CN.md)
 
 [note-link](https://app.yinxiang.com/shard/s27/nl/6509927/06ddfbe7-58e7-4835-8a01-ec15a02dfe11?title=Full%20Stack%20Web%20Application%20using%20React%2C%20Node.js%2C%20Express%20and%20Webpack)
 
-This is a boilerplate to build a full stack web application using React, Node.js, Express and Webpack. It is also configured with webpack-dev-server, eslint, prettier and babel.
+这是使用React，Node.js，Express和Webpack构建完整堆栈Web应用程序的样板。 它还配置了webpack-dev-server，eslint，prettier和babel。
 
 
-- [simple-react-full-stack](#simple-react-full-stack)
-  - [Introduction](#introduction)
-    - [Development mode](#development-mode)
-    - [Production mode](#production-mode)
-  - [Quick Start](#quick-start)
-  - [Documentation](#documentation)
-    - [Folder Structure](#folder-structure)
-    - [Babel](#babel)
-    - [ESLint](#eslint)
+- [简单react的全栈](#simple-react-full-stack)
+  - [介绍](#introduction)
+    - [开发模式](#development-mode)
+    - [部署模式](#production-mode)
+  - [快速开始](#quick-start)
+  - [文档](#documentation)
+    - [文档结构](#folder-structure)
+    - [Babel转换器](#babel)
+    - [ESLint代码风格](#eslint)
     - [Webpack](#webpack)
     - [Webpack dev server](#webpack-dev-server)
     - [Nodemon](#nodemon)
