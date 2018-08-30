@@ -84,12 +84,15 @@ All the source code will be inside **src** directory. Inside src, there is clien
 ```
 
 Babel requires plugins to do the transformation. Presets are the set of plugins defined by Babel. Preset **env** allows to use babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 and it will transform them to ES5. Preset **react** allows us to use JSX syntax and it will transform JSX to Javascript.
+Babel需要插件才能进行转换。 预设是Babel定义的插件集。 预设env允许使用babel-preset-es2015，babel-preset-es2016和babel-preset-es2017，它会将它们转换为ES5。 预设react允许我们使用JSX语法，它将JSX转换为Javascript。
 
 ### ESLint
 
 [ESLint](https://eslint.org/) is a pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
+ESLint是一个可插入且可配置的linter工具，用于识别和报告JavaScript中的模式。
 
 [.eslintrc.json file](<(https://eslint.org/docs/user-guide/configuring)>) (alternatively configurations can we written in Javascript or YAML as well) is used describe the configurations required for ESLint. Below is the .eslintrc.json file which I am using.
+.eslintrc.json文件（或者我们用Javascript或YAML编写的配置）用于描述ESLint所需的配置。 下面是我正在使用的.eslintrc.json文件。
 
 ```javascript
 {
@@ -107,12 +110,14 @@ Babel requires plugins to do the transformation. Presets are the set of plugins 
 ```
 
 [I am using Airbnb's Javascript Style Guide](https://github.com/airbnb/javascript) which is used by many JavaScript developers worldwide. Since we are going to write both client (browser) and server side (Node.js) code, I am setting the **env** to browser and node. Optionally, we can override the Airbnb's configurations to suit our needs. I have turned off [**no-console**](https://eslint.org/docs/rules/no-console), [**comma-dangle**](https://eslint.org/docs/rules/comma-dangle) and [**react/jsx-filename-extension**](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md) rules.
+我正在使用Airbnb的Javascript风格指南 ，该指南被全球许多JavaScript开发人员使用。 由于我们要编写客户端（浏览器）和服务器端（Node.js）代码，因此我将env设置为浏览器和节点。 或者，我们可以覆盖Airbnb的配置以满足我们的需求。 我已经关闭了无控制台 ， 逗号和反应/ jsx-filename-extension规则。
 
 ### Webpack
 
 [Webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser.
-
+Webpack是一个模块打包器。 其主要目的是打包JavaScript文件以便在浏览器中使用。
 [webpack.config.js](https://webpack.js.org/configuration/) file is used to describe the configurations required for webpack. Below is the webpack.config.js file which I am using.
+webpack.config.js文件用于描述webpack所需的配置。 下面是我正在使用的webpack.config.js文件。
 
 ```javascript
 const path = require("path");
@@ -163,17 +168,19 @@ module.exports = {
 };
 ```
 
-1.  **entry:** Here the application starts executing and webpack starts bundling
-2.  **output path and filename:** the target directory and the filename for the bundled output
-3.  **module loaders:** Module loaders are transformations that are applied on the source code of a module. We pass all the js file through [babel-loader](https://github.com/babel/babel-loader) to transform JSX to Javascript. CSS files are passed through [css-loaders](https://github.com/webpack-contrib/css-loader) and [style-loaders](https://github.com/webpack-contrib/style-loader) to load and bundle CSS files. Fonts and images are loaded through url-loader.
-4.  **Dev Server:** Configurations for the webpack-dev-server which will be described in coming section.
-5.  **plugins:** [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin) is a webpack plugin to remove the build folder(s) before building. [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) simplifies creation of HTML files to serve your webpack bundles. It loads the template (public/index.html) and injects the output bundle.
+1.  **entry:** Here the application starts executing and webpack starts bundling <entry：这里应用程序开始执行，webpack开始>
+2.  **output path and filename:** the target directory and the filename for the bundled output <输出路径和文件名：目标目录和捆绑输出的文件名>
+3.  **module loaders:** Module loaders are transformations that are applied on the source code of a module. We pass all the js file through [babel-loader](https://github.com/babel/babel-loader) to transform JSX to Javascript. CSS files are passed through [css-loaders](https://github.com/webpack-contrib/css-loader) and [style-loaders](https://github.com/webpack-contrib/style-loader) to load and bundle CSS files. Fonts and images are loaded through url-loader. <模块加载器：模块加载器是应用于模块源代码的转换。 我们通过babel-loader传递所有js文件，将JSX转换为Javascript。 CSS文件通过css-loader和样式加载器传递，以加载和捆绑CSS文件。 字体和图像通过url-loader加载。>
+4.  **Dev Server:** Configurations for the webpack-dev-server which will be described in coming section. <开发服务器： webpack-dev-server的配置>
+5.  **plugins:** [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin) is a webpack plugin to remove the build folder(s) before building. [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) simplifies creation of HTML files to serve your webpack bundles. It loads the template (public/index.html) and injects the output bundle. <插件： clean-webpack-plugin是一个webpack插件，用于在构建之前删除构建文件夹。 html-webpack-plugin简化了HTML文件的创建，以便为您的webpack包提供服务。 它加载模板（public / index.html）并注入输出包。>
 
 ### Webpack dev server
 
 [Webpack dev server](https://webpack.js.org/configuration/dev-server/) is used along with webpack. It provides a development server that provides live reloading for the client side code. This should be used for development only.
 
 The devServer section of webpack.config.js contains the configuration required to run webpack-dev-server which is given below.
+Webpack dev服务器与webpack一起使用。 它提供了一个开发服务器，为客户端代码提供实时重新加载。 这应该仅用于开发。
+webpack.config.js的devServer部分包含运行webpack-dev-server所需的配置，如下所示。
 
 ```javascript
 devServer: {
@@ -186,12 +193,14 @@ devServer: {
 ```
 
 [**Port**](https://webpack.js.org/configuration/dev-server/#devserver-port) specifies the Webpack dev server to listen on this particular port (3000 in this case). When [**open**](https://webpack.js.org/configuration/dev-server/#devserver-open) is set to true, it will automatically open the home page on startup. [Proxying](https://webpack.js.org/configuration/dev-server/#devserver-proxy) URLs can be useful when we have a separate API backend development server and we want to send API requests on the same domain. In our case, we have a Node.js/Express backend where we want to send the API requests to.
-
+Port指定Webpack dev服务器监听此特定端口（在本例中为3000）。 当open设置为true时，它将在启动时自动打开主页。 当我们有一个单独的API后端开发服务器并且我们想要在同一个域上发送API请求时， 代理 URL非常有用。 在我们的例子中，我们有一个Node.js / Express后端，我们希望将API请求发送到。
 ### Nodemon
 
 Nodemon is a utility that will monitor for any changes in the server source code and it automatically restart the server. This is used in development only.
+Nodemon是一个实用程序，它将监视服务器源代码中的任何更改，并自动重新启动服务器。 这仅用于开发。
 
 nodemon.json file is used to describe the configurations for Nodemon. Below is the nodemon.json file which I am using.
+nodemon.json文件用于描述Nodemon的配置。 下面是我正在使用的nodemon.json文件。
 
 ```javascript
 {
@@ -200,12 +209,15 @@ nodemon.json file is used to describe the configurations for Nodemon. Below is t
 ```
 
 Here, we tell nodemon to watch the files in the directory src/server where out server side code resides. Nodemon will restart the node server whenever a file under src/server directory is modified.
+在这里，我们告诉nodemon监视服务器端代码所在的目录src/server中的文件。 只要修改了src/server目录下的文件，Nodemon就会重新启动节点服务器。
 
 ### Express
 
 Express is a web application framework for Node.js. It is used to build our backend API's.
+Express是Node.js的Web应用程序框架。 它用于构建我们的后端API。
 
 src/server/index.js is the entry point to the server application. Below is the src/server/index.js file
+src/server/index.js是服务器应用程序的入口点。 下面是src/server/index.js文件
 
 ```javascript
 const express = require("express");
@@ -221,10 +233,12 @@ app.listen(8080, () => console.log("Listening on port 8080!"));
 ```
 
 This starts a server and listens on port 8080 for connections. The app responds with `{username: <username>}` for requests to the URL (/api/getUsername). It is also configured to serve the static files from **dist** directory.
+这将启动服务器并侦听端口8080以进行连接。 应用程序以{username: <username>}响应URL请求（/api/getUsername）。 它还配置为从dist目录提供静态文件。
 
 ### Concurrently
 
 [Concurrently](https://github.com/kimmobrunfeldt/concurrently) is used to run multiple commands concurrently. I am using it to run the webpack dev server and the backend node server concurrently in the development environment. Below are the npm/yarn script commands used.
+Concurrently用于同时运行多个命令。我正在使用它在开发环境中同时运行webpack dev服务器和后端节点服务器。 以下是使用的npm/yarn脚本命令。
 
 ```javascript
 "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
@@ -235,6 +249,7 @@ This starts a server and listens on port 8080 for connections. The app responds 
 ### VSCode + ESLint + Prettier
 
 [VSCode](https://code.visualstudio.com/) is a lightweight but powerful source code editor. [ESLint](https://eslint.org/) takes care of the code-quality. [Prettier](https://prettier.io/) takes care of all the formatting.
+VSCode 是一个轻量级但功能强大的源代码编辑器。 ESLint 负责代码质量。 Prettier 负责所有格式化。
 
 #### Installation guide
 

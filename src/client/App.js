@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./app.css";
 import ReactImage from "./react.png";
+import ReactComponentMountImg from "./react-component-mount.jpg";
+import DubboImg from "./dubbo.png";
 
 export default class App extends Component {
   constructor(props) {
@@ -8,10 +10,22 @@ export default class App extends Component {
     this.state = { username: null };
   }
 
-  componentDidMount() {
+  getSysUserName = () => {
     fetch("/api/getUsername")
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
+    .then(res => res.json())
+    .then(user => this.setState({ username: user.username }));
+  }
+
+  getInfo = () => {
+    // fetch("https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/user")
+    fetch("/api/getInfo")
+    .then(res => res.json())
+    .then(res => console.log('GetInfo res is: ', res))
+  }
+  
+  componentDidMount() {
+    this.getSysUserName();
+    this.getInfo();
   }
 
   render() {
@@ -22,7 +36,8 @@ export default class App extends Component {
         ) : (
           <h1>Loading.. please wait!</h1>
         )}
-        <img src={ReactImage} alt="react" />
+        <h2>dubbo protocol</h2>
+        <img src={DubboImg} alt="react" />
       </div>
     );
   }
