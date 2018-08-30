@@ -7,8 +7,12 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
+    "indent": ["error", 2],
     "linebreak-style": [0, "error", "windows"],
     "quotes": 0,
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": 0,
+    "react/destructuring-assignment": 0,
+    "no-unused-vars": 0
   }
 }
