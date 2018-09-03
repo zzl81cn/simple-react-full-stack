@@ -25,7 +25,8 @@ function getInfoMethod() {
 }
 function getInfoPromi() {
   return new Promise((resolve, reject) => {
-    request('https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/user', (error, response, body) => {
+    // request('https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/user', (error, response, body) => {
+    request('http://rap2api.taobao.org/app/mock/data/382300', (error, response, body) => {
       console.log('request result is: ', body);
       if (!error && response.statusCode === 200) {
         resolve(body);
@@ -52,7 +53,7 @@ api.get('/getInfo', (req, res, next) => {
     const result = JSON.parse(data);
     console.log('api get result is: ', JSON.stringify(result));
     res.send({
-      data: result.data
+      data: result
     });
   });
 });

@@ -7,20 +7,26 @@ import DubboImg from "./dubbo.png";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: null };
-  }
+    this.state = {
+      username: null,
+      info: null,
+    };
+  };
 
   getSysUserName = () => {
     fetch("/api/getUsername")
     .then(res => res.json())
     .then(user => this.setState({ username: user.username }));
-  }
+  };
 
   getInfo = () => {
     // fetch("https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/user")
     fetch("/api/getInfo")
     .then(res => res.json())
-    .then(res => console.log('GetInfo res is: ', res))
+    .then(res => {
+      console.log('GetInfo res is: ', res.data);
+      this.setState({info: res.data})
+    })
   }
   
   componentDidMount() {
@@ -29,15 +35,25 @@ export default class App extends Component {
   }
 
   render() {
+    const {info} = this.state;
+    // console.log('render info is: ', info)
     return (
       <div>
         {this.state.username ? (
-          <h1>Hello {this.state.username}</h1>
+          <h3>Hello {this.state.username}</h3>
         ) : (
           <h1>Loading.. please wait!</h1>
         )}
-        <h2>dubbo protocol</h2>
-        <img src={DubboImg} alt="react" />
+        <p>dubbo protocol</p>
+        {/* <img src={DubboImg} alt="react" /> */}
+        {info ? (
+          // info.map((item, index) => {
+            // console.log('render info item is: ', item);
+            <p>{info.name}</p>
+          // })
+        ) : (
+        <p>123</p>
+        )}
       </div>
     );
   }
