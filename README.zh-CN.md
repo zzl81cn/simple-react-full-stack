@@ -71,6 +71,9 @@ yarn start (or npm start)
 All the source code will be inside **src** directory. Inside src, there is client and server directory. All the frontend code (react, css, js and any other assets) will be in client directory. Backend Node.js/Express code will be in the server directory.
 所有源代码都在src目录下。 在src里面，有客户端和服务器目录。 所有前端代码（react，css，js和任何其他资产）都将位于客户端目录中。 后端Node.js / Express代码将位于服务器目录中。
 
+### 流程
+Nodejs后台在对应路由先行发送HTTP请求，之后由前台视图通过ajax请求数据后渲染视图。
+
 ### Babel
 
 [Babel](https://babeljs.io/) helps us to write code in the latest version of JavaScript. If an environment does not support certain features natively, Babel will help us to compile those features down to a supported version. It also helps us to convert JSX to Javascript.
